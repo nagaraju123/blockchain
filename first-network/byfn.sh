@@ -486,7 +486,7 @@ COMPOSE_FILE_ORG3=docker-compose-org3.yaml
 COMPOSE_FILE_KAFKA=docker-compose-kafka.yaml
 #
 # use golang as the default language for chaincode
-LANGUAGE=golang
+LANGUAGE=node
 # default image tag
 IMAGETAG="latest"
 # default consensus type

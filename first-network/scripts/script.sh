@@ -16,16 +16,16 @@ TIMEOUT="$4"
 VERBOSE="$5"
 : ${CHANNEL_NAME:="mychannel"}
 : ${DELAY:="3"}
-: ${LANGUAGE:="golang"}
+: ${LANGUAGE:="node"}
 : ${TIMEOUT:="10"}
 : ${VERBOSE:="false"}
 LANGUAGE=`echo "$LANGUAGE" | tr [:upper:] [:lower:]`
 COUNTER=1
 MAX_RETRY=10
 
-CC_SRC_PATH="github.com/chaincode/chaincode_example02/go/"
+CC_SRC_PATH="/opt/gopath/src/github.com/chaincode/fabcar/node/"
 if [ "$LANGUAGE" = "node" ]; then
-	CC_SRC_PATH="/opt/gopath/src/github.com/chaincode/chaincode_example02/node/"
+	CC_SRC_PATH="/opt/gopath/src/github.com/chaincode/fabcar/node/"
 fi
 
 if [ "$LANGUAGE" = "java" ]; then
@@ -35,7 +35,7 @@ fi
 echo "Channel name : "$CHANNEL_NAME
 
 # import utils
-. scripts/utils.sh
+./utils.sh
 
 createChannel() {
 	setGlobals 0 1
